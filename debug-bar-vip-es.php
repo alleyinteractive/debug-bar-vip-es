@@ -75,8 +75,8 @@ class Debug_Bar_VIP_ES {
 	public function es_wp_query_args( $args ) {
 		$count = count( $this->content['es_wp_query_args'] ) + 1;
 		$this->content['es_wp_query_args'][] = "
-		<h4>ES WP Request #{$count}</h4>
-		<pre>" . json_encode( $args ) . "</pre>
+		<h4>WordPress Args Request #{$count}</h4>
+		<pre>" . print_r( $args, 1 ) . "</pre>
 		";
 		return $args;
 	}
@@ -84,7 +84,7 @@ class Debug_Bar_VIP_ES {
 	public function es_query_args( $args ) {
 		$count = count( $this->content['es_query_args'] ) + 1;
 		$this->content['es_query_args'][] = "
-		<h4>ES Request #{$count}</h4>
+		<h4>ES Args #{$count}</h4>
 		<dl>
 			<dt>PHP</dt>
 				<dd><pre>" . print_r( $args, 1 ) . "</pre></dd>
@@ -98,7 +98,7 @@ class Debug_Bar_VIP_ES {
 	public function wrp_args( $args ) {
 		$count = count( $this->content['wrp_args'] ) + 1;
 		$this->content['wrp_args'][] = "
-		<h4>WRP Request #{$count}</h4>
+		<h4>WRP Args #{$count}</h4>
 		<dl>
 			<dt>PHP</dt>
 				<dd><pre>" . print_r( $args, 1 ) . "</pre></dd>
